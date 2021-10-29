@@ -39,29 +39,4 @@ app.listen(4000, function () {
 
 
 
-// const { ApolloServer } = require("apollo-server");
 
-// //graphql server
-
-// //types query/mutation/subscription
-// const typeDefs = `
-//     type Query {
-//         totalPosts: Int!
-//     }
-// `;
-
-// //resolvers
-// const resolvers = {
-//   Query: {
-//     totalPosts: () => 42,
-//   },
-// };
-
-// const apolloServer = new ApolloServer({
-//   typeDefs,
-//   resolvers,
-// });
-
-// apolloServer.listen(4000, () => {
-//   console.log(`🚀 GRAPHQL Server is running at http://localhost:${4000}`);
-// });
