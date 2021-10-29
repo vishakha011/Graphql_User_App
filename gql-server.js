@@ -1,20 +1,22 @@
 
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
+const {typeDefs} = require("./Schema/TypeDefs");
+const {resolvers} = require("./Schema/Resolvers");
 const http = require("http");
 
 const app = express();
 
-const typeDefs = `
-    type Query{
-        totalPosts: Int!
-    }
-`;
-const resolvers = {
-    Query: {
-        totalPosts: () => 100,
-    },
-};
+// const typeDefs = `
+//     type Query{
+//         totalPosts: Int!
+//     }
+// `;
+// const resolvers = {
+//     Query: {
+//         totalPosts: () => 100,
+//     },
+// };
 let apolloServer = null;
 async function startServer() {
     apolloServer = new ApolloServer({
@@ -38,30 +40,3 @@ app.listen(4000, function () {
 
 
 
-
-// const { ApolloServer } = require("apollo-server");
-
-// //graphql server
-
-// //types query/mutation/subscription
-// const typeDefs = `
-//     type Query {
-//         totalPosts: Int!
-//     }
-// `;
-
-// //resolvers
-// const resolvers = {
-//   Query: {
-//     totalPosts: () => 42,
-//   },
-// };
-
-// const apolloServer = new ApolloServer({
-//   typeDefs,
-//   resolvers,
-// });
-
-// apolloServer.listen(4000, () => {
-//   console.log(`🚀 GRAPHQL Server is running at http://localhost:${4000}`);
-// });
