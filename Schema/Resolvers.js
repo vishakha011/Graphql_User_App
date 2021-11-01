@@ -16,13 +16,13 @@ const resolvers = {
       return newUser;
     },
 
-    deleteUser:async (parent, { id }) => {
+    // deleteUser:async (parent, { id }) => {
       
-      const ok = Boolean(users[id]);
-      delete users[id];
+    //   const ok = Boolean(users[id]);
+    //   delete users[id];
 
-      return { ok };
-    },
+    //   return { ok };
+    // },
     
     
 

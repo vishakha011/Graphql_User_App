@@ -4,7 +4,7 @@ const typeDefs = gql`
   type User {
     userFirstName: String!
     userLastName: String!
-    userNumber: ID!
+    userNumber: Int!
 
    
   }
@@ -16,20 +16,17 @@ const typeDefs = gql`
   }
 
   #Mutations
+  #updateUser(userNumber: Int!, userLastName: String, userFirstName: String): User!
+  #deleteUser(userNumber: Int!): User!
+ # deleteQuote(id: Int!): DeleteResponse
    type Mutation {
      createUser(
       userFirstName: String!,
       userLastName: String!,
-      userNumber: ID!
+      userNumber: Int!
      ): User!,
-     updateUser(userNumber: ID!, userLastName: String, userFirstName: String): User!
-     deleteUser(userNumber: ID!): User!
-    # deleteQuote(id: ID!): DeleteResponse
-
-
-
-   }
+    }
    
 `;
 
-module.exports = {typeDefs}
+module.exports = { typeDefs }

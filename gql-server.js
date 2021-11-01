@@ -1,9 +1,8 @@
-
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
+const http = require("http");
 const {typeDefs} = require("./Schema/TypeDefs");
 const {resolvers} = require("./Schema/Resolvers");
-const http = require("http");
 
 const app = express();
 
@@ -37,6 +36,8 @@ app.listen(4000, function () {
     console.log(`server running on port 4000`);
     console.log(`gql path is ${apolloServer.graphqlPath}`);
 });
+
+
 
 
 
