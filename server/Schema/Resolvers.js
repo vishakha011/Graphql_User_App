@@ -9,7 +9,7 @@ const resolvers = {
 
   Mutation: {
     createUser(parent, args) {
-      // Obj conatining new user info
+      // Obj containing new user info
       console.log("calling mutation ", parent);
       const newUser = args;
       users.push(newUser);
