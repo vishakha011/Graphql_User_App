@@ -5,13 +5,15 @@ export const CREATE_USER_MUTATION = gql`
   createUser(
   $userFirstName: String! 
   $userLastName: String! 
-  $userNumber: ID!
+  $userNumber: Int!
   ) {
   createUser(
     userFirstName: $userFirstName
     userLastName: $userLastName
-    userNumber:$userNumber
+    userNumber: $userNumber
     ) {
+      userFirstName
+      userLastName
       userNumber
     }
     

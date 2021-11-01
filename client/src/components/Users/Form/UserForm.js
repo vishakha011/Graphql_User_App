@@ -5,10 +5,12 @@ import * as Styled from "./UserForm.styles";
 import Button from "../../Button/Button";
 import {CREATE_USER_MUTATION} from "../../../GraphQL/Mutations";
 import { useMutation } from '@apollo/client';
+import { useHistory } from "react-router-dom";
 
 
 const UserForm = ({buttonText}) => {
   const [createUser, { error }] = useMutation(CREATE_USER_MUTATION);
+  let history = useHistory();
 
 
     const formik = useFormik({
@@ -31,6 +33,7 @@ const UserForm = ({buttonText}) => {
               userNumber: values.userNumber
             },
           });
+          history.push("/")
           if(error) {
             console.log(error);
           }
